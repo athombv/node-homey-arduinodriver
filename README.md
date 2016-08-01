@@ -33,7 +33,7 @@ radio.on('payload', function(message) {
 ```
 or send data to a Arduino:
 ```
-var payload = new Buffer(['h','e','l','l','o','\n']);
+var payload = new Buffer('hello');
 radio.send(0xAA, payload, function(err) {
     if(!err) {
         console.log("message acked!");
