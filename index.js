@@ -1,4 +1,1 @@
-
-module.exports = {
-  ArduinoRadio: require('./lib/arduino_radio.js')
-};
+module.exports = require('./lib/arduino_radio.js');

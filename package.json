@@ -1,7 +1,7 @@
 {
   "name": "homey-arduinodriver",
-  "version": "1.0.0",
-  "description": "Homey module to communicate with nRF905 modules ",
+  "version": "0.0.1",
+  "description": "Homey module to communicate with nRF905 modules",
   "main": "index.js",
   "directories": {
     "example": "examples"
