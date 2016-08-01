@@ -12,12 +12,17 @@ Examples are provided in the examples/ folder.
 - Homey running 0.9.0 or later
 
 ## Installation
-Import the file `arduino_radio.js` to your existing Homey app project. 
+install the module to your homey app project by using npm:
+
+```npm install git+https://github.com/athombv/node-homey-arduinodriver.git```
+
+Add the signal-definition in ```signal.json``` to your existing app.json. This signal-definition will be used by the arduinodriver.
+
 ## Usage
-first, create a RadioArduino instance with a desired receive address:
+first, create a ArduinoRadio instance with a desired receive address:
 
 ```
-var radio = new HomeyRadio({address: 0x50});
+var radio = new ArduinoRadio({address: 0x50});
 ```
 listen to incoming data events:
 ```
@@ -36,21 +41,21 @@ radio.send(0xAA, payload, function(err) {
 });
 ```
 ### Constructors
-- `HomeyArduino(opts)`
-    * ***Description:*** Constructor which spawns a HomeyArduino object
+- `ArduinoRadio(opts)`
+    * ***Description:*** Constructor which spawns a ArduinoRadio object
     * ***Parameters:***
-        * ***opts.address:*** receive address of Homey 
+        * ***opts.address:*** receive address of Homey between 0x00 and 0xFE
 
 ### Methods
-- `HomeyArduino.send(address, data, callback)`
+- `ArduinoRadio.send(address, data, callback)`
     * ***returning:***  -
     * ***Description:***  method to send data to a arduino device
     * ***Parameters:***
-        * ***address:*** receive address of the nRF905 module
+        * ***address:*** receive address of the nRF905 module between 0x00 and 0xFE
         * ***data:*** Buffer with payload data ***Max 8 bytes***
         * ***callback:*** function(err) which get called on a timeout or ack
 ### Events
-- `HomeyArduino.on('payload', function(message){})`
+- `ArduinoRadio.on('payload', function(message){})`
     * ***Description:***  Method to send data to a arduino device
     * ***Parameters:***
         * ***message.srcAddr:*** address of arduino
