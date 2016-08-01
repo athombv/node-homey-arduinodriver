@@ -1,4 +1,4 @@
-# Homey nRF905 nodemodule
+# Homey arduino module 
 Homey app developers can use this node module to communicate with a nRF905 module over 433MHz wired to a Arduino. The Arduino must be running the Homey-arduino-nRF905 library which can be found [here](https://github.com/athombv/homey-arduino-nrf905).
 
 Currently it is only possible to receive data from an Arduino device by first sending data to it. After sending data the driver switches to receive mode and waits 200ms for the Arduino to respond. After the 200ms have passed Homey returns to its default receive configuration. 
